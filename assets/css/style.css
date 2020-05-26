@@ -1,0 +1,49 @@
+/*В данном файле описаны стили приложения*/
+
+body {
+    background: #F5F5F5;
+    font-family: museo_sans_cyrl_700;
+    color: #19212a;
+}
+.title-header {
+    text-align: center;
+}
+.dx-export-menu {
+    display:none;
+}
+#gauge {
+    height: 350px;
+    width: 100%;
+}
+
+.title-header {
+    margin-top: 30px;
+}
+.content-right {
+    font-family: museo_sans_cyrl_100;
+    margin-top: 60px;
+    text-align: center;
+}
+.content-info {
+    width: 250px;
+    display: inline-block;
+    padding: 10px 10px;
+    background: #88b3ff;
+    margin: 10px 0px;
+    border-radius: 9px;
+    text-align: center;
+    font-family: museo_sans_cyrl_300;
+    color: #0c1b82;
+}
+.btn {
+    margin: 40px auto;
+}
+.on {
+    background: #94ff92;
+    content: "ON";
+}
+.off {
+    background: #ff9ca0;
+    content: "OFF";
+}
+

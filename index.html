@@ -1,149 +1,53 @@
-﻿<!DOCTYPE html>
-<html lang="ru">
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
-	<title>Monitoring</title>
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>DevExtreme Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-
+    <link rel="stylesheet" type="text/css" href="assets/css/dx.style.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/font.css">
+	<script src="assets/js/jquery-1.3.2.min.js"></script>
+    <script src="assets/js/dx.all.js"></script>
+    <script src="assets/js/index.js"></script>
 </head>
-<body>
-<div class="message-box">
-
-</div>
-<header class="head">
-	<div class="container">
-		<div class="head__wrap">
-			<p class="head__text">Мониторинг ip пространства <span><b>v.0.1.0</b></span></p>
-			<input type="text" onkeyup="myFunction()" id="myInput" placeholder="Поиск по № ВСП">
-
-			<div class="check-box__wrap">
-				<div>
-					<input id="checkDown" type="checkbox" name="check" value="check1">
-					<label for="checkDown"> Скрыть статусы: <span class="label-span red"></span></label>
-				</div>
-				<div>
-					<input id="checkUp" type="checkbox" name="check" value="check2">
-					<label for="checkUp">Скрыть статусы:  <span class="label-span green"></span></label>
-				</div>
-			</div>
-			<p class="stat">Статистика:
-				<span class="stat__all">1110</span>
-				<b>/</b>
-				<span class="stat__down">320</span>
-				<b>/</b>
-				<span class="stat__up">330</span>
-			</p>
-		</div>
-
-	</div>
-	<template id="itemTemplate">
-		<li class="sidebar__item">
-			<div class="sidebar__head-content">
-				<div class="sidebar__wrap_title">
-					<h6 class="sidebar__title">8622/0001 dd dom dx-px</h6>
-					<span class="label-span status-connect"></span>
-				</div>
-				<p class="sidebar__text"><b>IP:</b>
-					<span class="sidebar__text_ip"></span>
-				</p>
-				<p class="sidebar__text"><b>Адрес:</b>
-					<span class="sidebar__text_adress"></span>
-				</p>
-				<p class="sidebar__text"><b>Тип:</b>
-					<span class="sidebar__text_type">4516</span>
-				</p>
-			</div>
-			<div class="silent">
-				<h5 class="silent__text_obj"></h5>
-				<p class="silent__text"><b>Модель УС: </b><span class="silent__text_model"></span></p>
-				<p class="silent__text"><b>Адрес: </b><span class="silent__text_adress"></span></p>
-				<p class="silent__text"><b>IP: </b><span class="silent__text_ip"></span></p>
-				<p class="silent__text"><b>Маска: </b><span class="silent__text_mask"></span></p>
-				<p class="silent__text"><b>Шлюз: </b><span class="silent__text_shluz"></span></p>
-				<p class="silent__text"><b>Статус: </b><span class="silent__text_status"></span></p>
-				<p class="silent__text"><b>Статус шлюза: </b><span class="silent__text_shluzStatus"></span></p>
-				<p class="silent__text"><b>Оборудование: </b><span class="silent__text_oborudovanie"></span></p>
-				<p class="silent__text"><b>Комментарий: </b><span class="silent__text_comment"></span></p>
-				<p class="silent__text"><b>Последее соедиение: </b><span class="silent__text_lastConnect"></span></p>
-			</div>
-		</li>
-	</template>
-</header>
+<body class="dx-viewport">
+<h2 class="title-header">Мониторинг контроллера</h2>
 <div class="container">
-	<section class="content">
-		<aside class="sidebar">
-			<ul class="sidebar__list" id="logs">
-				<li class="sidebar__item">
-					<h5>Загрузка...</h5>
-				</li>
-			</ul>
-		</aside>
-		<div class="window-content">
+    <div class="row">
+        <div class="col-lg-6 ">
+            <div class="demo-container">
+                <div id="gauge"></div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="content-right">
+                <hr>
+                <h6 class="title-content">Показатель наружней температуры</h6>
+                <div class="content-info tin">0</div>
+                <hr>
+                <h6 class="title-content">Показатель внутренней температуры</h6>
+                <div class="content-info tout">0</div>
+                <hr>
+                <h6 class="title-content">Показатель электросети</h6>
+                <div class="content-info status">no connect</div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success" onclick="get_content()">Обновить данные</button>
+    </div>
 
-		</div>
-	</section>
-</div>
-
-<footer>
-	<div class="container">
-		<button class="offer__btn">Добавить объект</button>
-	</div>
-</footer>
-
-<div style="display: none;">
-	<div class="box-modal" id="exampleModal_form">
-		<div class="box-modal_close arcticmodal-close">закрыть</div>
-		<div class="content-popup">
-			<h4>Меню добавления объектов</h4>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 1 </h5>
-				<input type="text" id="formInput1">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 2 </h5>
-				<input type="text" id="formInput2">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 3 </h5>
-				<input type="text" id="formInput3">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 4</h5>
-				<input type="text" id="formInput4">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 5</h5>
-				<input type="text" id="formInput5">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 6</h5>
-				<input type="text" id="formInput6">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 7</h5>
-				<input type="text" id="formInput7">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 8</h5>
-				<input type="text" id="formInput8">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 9</h5>
-				<input type="text" id="formInput9">
-			</li>
-			<li class="create__list">
-				<h5 class="criate__title">Поле 10</h5>
-				<input type="text" id="formInput10">
-			</li>
-			<button class="create__btn">Сохранить</button>
-		</div>
+	<div class="interface">
+		<div class="loading" id="info">
+        </div>
 	</div>
 </div>
-<script src="jquery-1.3.2.min.js"></script>
-<script src="jquery.arcticmodal-0.3.min.js"></script>
-<script src="script.js"></script>
-
 </body>
 </html>
+
