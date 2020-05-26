@@ -1,0 +1,268 @@
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+	padding: 0;
+	margin: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset,img {
+	border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-weight: normal;
+	font-style: normal;
+}
+ol,ul {
+	list-style: none;
+}
+caption,th {
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border: 0;
+} 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: 'Verdana';
+	color: #5e5e5e;
+	font-size: 14px !important;
+}
+/*стили сообщения*/
+.message-box {
+	max-width: 400px;
+	height: 100px;
+	position: absolute;
+	bottom: 30px;
+	right: 20px;
+}
+.message {
+	width: 150px;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 15px;
+}
+
+.ok{
+	background: rgba(149, 255, 136, 0.67);
+}
+.err {
+	background: rgba(255, 215, 230, 0.67);
+}
+
+/*Секция №1*/
+.head,
+footer {
+	background: #f1f1f1;
+	border-bottom: 1px solid #999;
+	border-top: 1px solid #999;
+}
+.head__wrap {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0px;
+
+}
+.head__text {
+	max-width: 180px;
+	text-transform: uppercase;
+	border: 2px solid forestgreen;
+	padding: 5px;
+	background: #fffbf7;
+	margin-bottom: 0px;
+}
+#myInput {
+	padding: 5px;
+	height: 35px;
+	width: 250px;
+
+}
+
+.check-box__wrap {
+	display:flex;
+	flex-direction: column;
+}
+.stat__down {
+	 color: #c82333;
+ }
+.stat__up {
+	color: forestgreen;
+}
+
+.label-span {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+.green,
+li[rel= "UP"] {
+	background: #8EFF7F;
+}
+.red,
+li[rel= "DOWN"] {
+	background: #FEA29B;
+}
+
+/*Секция №2*/
+.sidebar {
+	width: 40%;
+	background: rgba(250, 255, 197, 0.31);
+	border: 1px solid #999;
+	height: 100vh;
+	padding: 10px;
+	overflow-y: scroll;
+}
+
+.sidebar__item {
+	border: 1px solid #999;
+	padding: 5px;
+	background: #fffbf7;
+	cursor: pointer;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	/*display: none;*/
+}
+.sidebar__item:hover,
+.sidebar__item:active {
+	opacity: 0.7;
+}
+
+.sidebar__wrap_title {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.sidebar__text {
+	margin-bottom: 0px;
+	color: gray;
+}
+.silent {
+	display: none;
+}
+
+.content {
+	display: flex;
+}
+.window-content {
+	width: 60%;
+	height: 100vh;
+	background: #f4f4f4;
+	margin-left: 15px;
+	padding: 20px;
+}
+.silent__text {
+	margin: 10px 0px;
+	border-bottom: 1px solid #8b8285;
+}
+
+/*Арктик модал*/
+ .box-modal {
+	 position: relative;
+	 max-width: 1000px;
+	 background: #fff;
+	 box-shadow: 0 0 0 6px rgba(153, 153, 153, 0.3);
+ }
+.box-modal_close {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	line-height: 15px;
+	color: #999;
+	cursor: pointer;
+}
+.box-modal_close:hover {
+	color: #666;
+}
+.content_show  {
+	display: none;
+}
+.arcticmodal-overlay,
+.arcticmodal-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-collapse: collapse;
+}
+*:first-child + html .arcticmodal-container {
+	height: 100%;
+}
+.arcticmodal-container_i {
+	height: 100%;
+	margin: 0 auto;
+}
+.arcticmodal-container_i2 {
+	padding: 24px;
+	margin: 0;
+	border: 0;
+	vertical-align: middle;
+}
+.arcticmodal-error {
+	padding: 20px;
+	border-radius: 10px;
+	background: #000;
+	color: #fff;
+}
+.arcticmodal-loading {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+}
+.wrapper__card {
+	border: 1px solid #000;
+	padding: 10px;
+	margin: 10px
+}
+.content-popup {
+	width: 300px;
+}
+button {
+	padding: 10px;
+	margin: 10px;
+	background: #ffca47;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 6px -3px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+.content-popup {
+	width: 600px;
+	padding: 20px;
+}
+.create__list {
+	display: flex;
+	margin: 10px 0px;
+}
+.criate__title {
+	width: 150px;
+}
+.create__list input {
+	width: 400px;
+}
+.content-popup button {
+	text-align: center;
+}
